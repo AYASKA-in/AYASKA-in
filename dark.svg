@@ -1,0 +1,174 @@
+<svg width="1280" height="640" viewBox="0 0 1280 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="60" y1="40" x2="1180" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#06111d" />
+      <stop offset="1" stop-color="#0d1824" />
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="94" x2="0" y2="610" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0d1b2c" />
+      <stop offset="1" stop-color="#12253a" />
+    </linearGradient>
+    <linearGradient id="portraitFrame" x1="88" y1="140" x2="450" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0e1d2d" />
+      <stop offset="1" stop-color="#0d1b2c" />
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="1400" height="760" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#08202d" flood-opacity="0.65" />
+    </filter>
+  </defs>
+
+  <rect width="1280" height="640" fill="url(#bg)" />
+
+  <g filter="url(#shadow)">
+    <rect x="48" y="34" width="1184" height="572" rx="28" fill="#0a1726" stroke="#16314d" />
+    <rect x="48" y="34" width="1184" height="54" rx="28" fill="#0e1d2d" />
+    <rect x="48" y="60" width="1184" height="546" rx="0" fill="#0a1726" />
+    <rect x="48" y="34" width="1184" height="572" rx="28" stroke="#16314d" />
+  </g>
+
+  <circle cx="84" cy="61" r="6" fill="#ff6f6f" />
+  <circle cx="106" cy="61" r="6" fill="#f2a53d" />
+  <circle cx="128" cy="61" r="6" fill="#58e2a7" />
+  <text x="166" y="66" fill="#5d778c" class="micro">profile.sh -- live</text>
+
+  <g transform="translate(1090, 48)">
+    <rect width="112" height="26" rx="13" fill="#39d7ff" fill-opacity="0.18" stroke="#39d7ff" />
+    <text x="20" y="17" fill="#39d7ff" class="micro">@AYASKA-in</text>
+  </g>
+
+  <rect x="72" y="104" width="388" height="418" rx="24" fill="url(#portraitFrame)" stroke="#16314d" />
+  <rect x="96" y="128" width="340" height="370" rx="22" fill="#0d1b2c" stroke="#16314d" />
+  <text x="96" y="118" fill="#5d778c" class="micro">VISUAL.MAP</text>
+  <text x="366" y="118" fill="#58e2a7" class="micro">subject.live</text>
+  <rect x="114" y="148" width="304" height="334" rx="18" fill="#0e1d2d" stroke="#16314d" />
+  <image href="data:image/png;base64,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" x="136" y="162" width="260" height="310" preserveAspectRatio="xMidYMid meet" />
+  <rect x="114" y="148" width="304" height="334" rx="18" fill="none" stroke="#f4b25a" stroke-opacity="0.24" />
+
+  <path d="M480 120H1206" stroke="#16314d" />
+  <path d="M480 512H1206" stroke="#16314d" />
+  <text x="524" y="142" fill="#39d7ff" class="micro">SYSTEM.INFO</text>
+  <g transform="translate(1076, 120)">
+    <rect width="98" height="26" rx="13" fill="#ff6f6f" fill-opacity="0.12" stroke="#ff6f6f" />
+    <circle cx="18" cy="13" r="4" fill="#ff6f6f">
+      <animate attributeName="opacity" values="0.35;1;0.35" dur="1.8s" repeatCount="indefinite" />
+    </circle>
+    <text x="30" y="17" fill="#ff6f6f" class="micro">LIVE</text>
+  </g>
+
+  <text x="520" y="188" fill="#f2f8ff" class="heading">MONINGI ROHIT</text>
+  <text x="523" y="208" fill="#5d778c" class="subhead">full-stack systems // ai products // motion-rich interfaces</text>
+
+
+      <g opacity="0">
+        <text x="525" y="230" fill="#9ab6c8" class="row">ORIGIN......................BANGALORE, INDIA</text>
+        <animate attributeName="opacity" values="0;1" dur="0.32s" begin="0.55s" fill="freeze" />
+      </g>
+
+      <g opacity="0">
+        <text x="525" y="257" fill="#9ab6c8" class="row">EDUCATION.................B.TECH IT, VIT &#x27;26</text>
+        <animate attributeName="opacity" values="0;1" dur="0.32s" begin="0.63s" fill="freeze" />
+      </g>
+
+      <g opacity="0">
+        <text x="525" y="284" fill="#9ab6c8" class="row">CURRENT.................PROSPIENT SENTINELAI</text>
+        <animate attributeName="opacity" values="0;1" dur="0.32s" begin="0.71s" fill="freeze" />
+      </g>
+
+      <g opacity="0">
+        <text x="525" y="311" fill="#9ab6c8" class="row">UP NEXT....................BOSCH // AUG 2026</text>
+        <animate attributeName="opacity" values="0;1" dur="0.32s" begin="0.79s" fill="freeze" />
+      </g>
+
+      <g opacity="0">
+        <text x="525" y="338" fill="#9ab6c8" class="row">CORE.WEB..................NEXT 16 / REACT 19</text>
+        <animate attributeName="opacity" values="0;1" dur="0.32s" begin="0.87s" fill="freeze" />
+      </g>
+
+      <g opacity="0">
+        <text x="525" y="365" fill="#9ab6c8" class="row">CORE.API..................FASTAPI / POSTGRES</text>
+        <animate attributeName="opacity" values="0;1" dur="0.32s" begin="0.95s" fill="freeze" />
+      </g>
+
+      <g opacity="0">
+        <text x="525" y="392" fill="#9ab6c8" class="row">CORE.AI...................PYTORCH / TF / XAI</text>
+        <animate attributeName="opacity" values="0;1" dur="0.32s" begin="1.03s" fill="freeze" />
+      </g>
+
+      <g opacity="0">
+        <text x="525" y="419" fill="#9ab6c8" class="row">CLOUD................AWS / SUPABASE / VERCEL</text>
+        <animate attributeName="opacity" values="0;1" dur="0.32s" begin="1.11s" fill="freeze" />
+      </g>
+
+      <g opacity="0">
+        <text x="525" y="446" fill="#9ab6c8" class="row">FEATURED...................SRI LALITHA STORE</text>
+        <animate attributeName="opacity" values="0;1" dur="0.32s" begin="1.19s" fill="freeze" />
+      </g>
+
+      <g opacity="0">
+        <text x="525" y="473" fill="#9ab6c8" class="row">STATUS...................BUILDING + SHIPPING</text>
+        <animate attributeName="opacity" values="0;1" dur="0.32s" begin="1.27s" fill="freeze" />
+      </g>
+
+  <text x="524" y="491" fill="#58e2a7" class="prompt">&gt; portfolio: rohitmoningi.in</text>
+  <text x="524" y="514" fill="#39d7ff" class="prompt">&gt; linkedin: /in/moningi-rohit</text>
+  <rect x="815" y="498" width="8" height="16" rx="2" fill="#f2f8ff">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" />
+  </rect>
+
+
+    <g transform="translate(88, 535)" opacity="0">
+      <rect width="352" height="78" rx="18" fill="#081523" stroke="#16314d" />
+      <text x="20" y="24" fill="#39d7ff" class="micro">LIVE BUILD</text>
+      <text x="20" y="46" fill="#f2f8ff" class="cardtitle">Sri Lalitha Signature Noodles</text>
+      <text x="20" y="64" fill="#5d778c" class="cardsub">Next.js commerce // 192-frame canvas // Razorpay</text>
+      <animate attributeName="opacity" values="0;1" dur="0.4s" begin="1.10s" fill="freeze" />
+    </g>
+
+    <g transform="translate(458, 535)" opacity="0">
+      <rect width="352" height="78" rx="18" fill="#081523" stroke="#16314d" />
+      <text x="20" y="24" fill="#39d7ff" class="micro">RESEARCH</text>
+      <text x="20" y="46" fill="#f2f8ff" class="cardtitle">IEEE ECG Classification</text>
+      <text x="20" y="64" fill="#5d778c" class="cardsub">Deep CNN // Grad-CAM // MIT-BIH arrhythmia</text>
+      <animate attributeName="opacity" values="0;1" dur="0.4s" begin="1.22s" fill="freeze" />
+    </g>
+
+    <g transform="translate(828, 535)" opacity="0">
+      <rect width="352" height="78" rx="18" fill="#081523" stroke="#16314d" />
+      <text x="20" y="24" fill="#39d7ff" class="micro">SYSTEMS</text>
+      <text x="20" y="46" fill="#f2f8ff" class="cardtitle">Command Center SaaS</text>
+      <text x="20" y="64" fill="#5d778c" class="cardsub">RBAC // FastAPI // PostgreSQL // multi-tenant</text>
+      <animate attributeName="opacity" values="0;1" dur="0.4s" begin="1.34s" fill="freeze" />
+    </g>
+
+  <style>
+    .heading {
+      font: 700 31px 'Trebuchet MS', 'Segoe UI', sans-serif;
+      letter-spacing: 1.2px;
+    }
+    .subhead {
+      font: 500 14px 'Trebuchet MS', 'Segoe UI', sans-serif;
+      letter-spacing: 0.8px;
+    }
+    .row {
+      font: 500 14px 'Consolas', 'Courier New', monospace;
+      letter-spacing: 0.35px;
+    }
+    .micro {
+      font: 600 12px 'Consolas', 'Courier New', monospace;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .prompt {
+      font: 500 14px 'Consolas', 'Courier New', monospace;
+      letter-spacing: 0.4px;
+    }
+    .cardtitle {
+      font: 700 15px 'Trebuchet MS', 'Segoe UI', sans-serif;
+      letter-spacing: 0.2px;
+    }
+    .cardsub {
+      font: 500 11px 'Consolas', 'Courier New', monospace;
+      letter-spacing: 0.3px;
+    }
+  </style>
+</svg>
