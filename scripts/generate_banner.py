@@ -154,38 +154,47 @@ ROW_COLOURS = {
 }
 
 # ── IMAGE PROCESSING ──────────────────────────────────────────────────────────
-def load_and_dither(photo_path, dark=True):
+def load_and_dither(photo_path, dark=True, prepped=False):
+    """
+    Load photo, crop to portrait grid, enhance, dither.
+    If prepped=True: the image already has background removed and composited
+    on the correct background (black for dark, white for light) — skip inversion.
+    """
     img = Image.open(photo_path).convert("RGB")
 
-    # Crop to head + shoulders: take centre portrait aspect
-    w, h = img.size
-    target_aspect = GRID_COLS / GRID_ROWS  # ~0.94 — portrait
-    if w / h > target_aspect:
-        # too wide — crop sides
-        new_w = int(h * target_aspect)
-        left = (w - new_w) // 2
-        img = img.crop((left, 0, left + new_w, h))
-    else:
-        # too tall — take top 75% (favour head/shoulders)
-        new_h = int(w / target_aspect)
-        top = max(0, int(h * 0.05))  # slight top offset
-        img = img.crop((0, top, w, min(top + new_h, h)))
+    if not prepped:
+        # Auto-crop to head + shoulders portrait aspect
+        w, h = img.size
+        target_aspect = GRID_COLS / GRID_ROWS  # ~0.94
+        if w / h > target_aspect:
+            new_w = int(h * target_aspect)
+            left = (w - new_w) // 2
+            img = img.crop((left, 0, left + new_w, h))
+        else:
+            new_h = int(w / target_aspect)
+            top = max(0, int(h * 0.05))
+            img = img.crop((0, top, w, min(top + new_h, h)))
 
     # Resize to dither grid
     img = img.resize((GRID_COLS, GRID_ROWS), Image.LANCZOS)
 
-    # Enhance: contrast 1.3×, autocontrast, then unsharp mask
+    # Enhance contrast + sharpness
     img = ImageOps.autocontrast(img, cutoff=1)
-    img = ImageEnhance.Contrast(img).enhance(1.3)
-    img = img.filter(ImageFilter.UnsharpMask(radius=3, percent=140, threshold=3))
+    img = ImageEnhance.Contrast(img).enhance(1.35)
+    img = img.filter(ImageFilter.UnsharpMask(radius=3, percent=150, threshold=3))
 
-    # Convert to grayscale
     gray = img.convert("L")
     arr = np.array(gray, dtype=np.float32)
 
-    if dark:
-        # Dark mode: invert — lit pixels become dots (bright = more dots)
-        arr = 255 - arr
+    if prepped:
+        # Dark mode: black bg → face is bright → high values = dots → no invert needed
+        # Light mode: white bg → face is dark → low values → invert to make face = dots
+        if not dark:
+            arr = 255 - arr
+    else:
+        # Raw photo: dark mode needs invert (bright face → more dots on dark bg)
+        if dark:
+            arr = 255 - arr
 
     # Normalise 0-1
     arr = arr / 255.0
@@ -511,28 +520,54 @@ def build_svg(dither_arr, theme_name, n_groups=60):
 
 # ── MAIN ──────────────────────────────────────────────────────────────────────
 def main():
+    """
+    Usage:
+        # Two pre-processed portraits (recommended after running preprocess_photo.py):
+        python generate_banner.py assets/portrait-dark.png assets/portrait-light.png [output_dir]
+
+        # Single raw photo (auto-crop + dither):
+        python generate_banner.py photo.jpeg [output_dir]
+    """
     if len(sys.argv) < 2:
-        print("Usage: python generate_banner.py <photo_path> [output_dir]")
+        print("Usage: python generate_banner.py <dark_photo> [light_photo] [output_dir]")
         sys.exit(1)
 
-    photo_path = sys.argv[1]
-    out_dir = sys.argv[2] if len(sys.argv) > 2 else "."
-
-    if not os.path.exists(photo_path):
-        print(f"Error: photo not found: {photo_path}")
+    # Detect if first arg is a prepped portrait-dark.png or a raw photo
+    arg1 = sys.argv[1]
+    if not os.path.exists(arg1):
+        print(f"Error: photo not found: {arg1}")
         sys.exit(1)
 
-    print(f"Loading photo: {photo_path}")
+    # Check for two-portrait mode
+    dark_photo = arg1
+    light_photo = None
+    out_dir = "."
+    prepped = False
+
+    if len(sys.argv) >= 3 and os.path.isfile(sys.argv[2]):
+        # Two photos provided
+        light_photo = sys.argv[2]
+        out_dir = sys.argv[3] if len(sys.argv) > 3 else "."
+        prepped = True
+        print(f"Two-portrait mode (pre-processed)")
+        print(f"  Dark portrait:  {dark_photo}")
+        print(f"  Light portrait: {light_photo}")
+    else:
+        out_dir = sys.argv[2] if len(sys.argv) > 2 else "."
+        print(f"Single-photo mode: {dark_photo}")
+
     print(f"Processing dark mode dither...")
-    dark_arr = load_and_dither(photo_path, dark=True)
+    dark_arr = load_and_dither(dark_photo, dark=True, prepped=prepped)
     dark_dots = int(np.sum(dark_arr > 0.5))
     print(f"  Dark: {dark_dots} lit pixels")
 
     print(f"Processing light mode dither...")
-    light_arr = load_and_dither(photo_path, dark=False)
+    light_src = light_photo if light_photo else dark_photo
+    light_arr = load_and_dither(light_src, dark=False, prepped=prepped)
     light_dots = int(np.sum(light_arr > 0.5))
     print(f"  Light: {light_dots} lit pixels")
 
+    os.makedirs(out_dir, exist_ok=True)
     for theme_name, arr in [("dark", dark_arr), ("light", light_arr)]:
         print(f"Building {theme_name} SVG...")
         random.seed(42)
