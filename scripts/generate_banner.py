@@ -270,13 +270,25 @@ def build_svg(dither_arrs, theme_name, n_groups=60):
           f'keyTimes="{kt}" dur="{loop_dur}" begin="{loop_begin}" repeatCount="indefinite"/>')
 
         for i, path_d in enumerate(groups):
+            # Generate random scatter offsets for this group
+            dx = random.randint(-150, 150)
+            dy = random.randint(-150, 150)
+            
+            # Map the opacity values (1 or 0) to translation values (0,0 or dx,dy)
+            t_vals = ";".join(["0 0" if v == "1" else f"{dx} {dy}" for v in frame_vals[frame_idx].split(";")])
+
             if frame_idx == 0:
                 begin = 0.20 + i * 0.03
                 a(f'<g opacity="0">'
                   f'<animate attributeName="opacity" values="0;1" dur="0.9s" begin="{begin:.2f}s" fill="freeze" '
-                  f'calcMode="spline" keyTimes="0;1" keySplines=".4 0 .2 1"/>')
+                  f'calcMode="spline" keyTimes="0;1" keySplines=".4 0 .2 1"/>'
+                  f'<animateTransform attributeName="transform" type="translate" values="{t_vals}" '
+                  f'keyTimes="{kt}" dur="{loop_dur}" begin="{loop_begin}" repeatCount="indefinite" additive="sum"/>')
             else:
                 a(f'<g>')
+                a(f'<animateTransform attributeName="transform" type="translate" values="{t_vals}" '
+                  f'keyTimes="{kt}" dur="{loop_dur}" begin="{loop_begin}" repeatCount="indefinite" additive="sum"/>')
+                
             if path_d:
                 a(f'<path d="{path_d}"/>')
             a('</g>')
