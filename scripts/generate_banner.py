@@ -250,8 +250,7 @@ def build_svg(dither_arr, theme_name, n_groups=60):
       f'fill="{t["frame_fill"]}" stroke="{t["frame_stroke"]}"/>')
 
     a(f'<g transform="translate({TRANS_X},{TRANS_Y}) scale({SCALE_X},{SCALE_Y})" '
-      f'fill="url(#asciiGrad)" shape-rendering="crispEdges">')
-    a('<set attributeName="opacity" to="0" begin="3.2s"/>')
+      f'fill="{t["dot_fill"]}" shape-rendering="crispEdges">')
 
     for i, path_d in enumerate(groups):
         begin = 0.20 + i * 0.03
