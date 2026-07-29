@@ -180,10 +180,9 @@ def split_into_groups(dither_arr, n_groups=60):
     return paths
 
 # ── SVG GENERATION ────────────────────────────────────────────────────────────
-def build_svg(dither_arr, theme_name, n_groups=60):
+def build_svg(dither_arrs, theme_name, n_groups=60):
     t = THEMES[theme_name]
     random.seed(42)
-    groups = split_into_groups(dither_arr, n_groups)
 
     parts = []
     a = parts.append
@@ -249,32 +248,52 @@ def build_svg(dither_arr, theme_name, n_groups=60):
     a(f'<rect x="{FRAME_X}" y="{FRAME_Y}" width="{FRAME_W}" height="{FRAME_H}" rx="10" '
       f'fill="{t["frame_fill"]}" stroke="{t["frame_stroke"]}"/>')
 
+    loop_dur = "16s"
+    loop_begin = "3.2s"
+    kt = "0.000;0.194;0.288;0.432;0.525;0.669;0.763;0.906;1.000"
+    frame_vals = [
+        "1;1;0;0;0;0;0;0;1",
+        "0;0;1;1;0;0;0;0;0",
+        "0;0;0;0;1;1;0;0;0",
+        "0;0;0;0;0;0;1;1;0",
+    ]
+
     a(f'<g transform="translate({TRANS_X},{TRANS_Y}) scale({SCALE_X},{SCALE_Y})" '
       f'fill="{t["dot_fill"]}" shape-rendering="crispEdges">')
 
-    for i, path_d in enumerate(groups):
-        begin = 0.20 + i * 0.03
-        a(f'<g opacity="0">'
-          f'<animate attributeName="opacity" values="0;1" dur="0.9s" begin="{begin:.2f}s" fill="freeze" '
-          f'calcMode="spline" keyTimes="0;1" keySplines=".4 0 .2 1"/>')
-        if path_d:
-            a(f'<path d="{path_d}"/>')
+    # Ensure we only loop over up to 4 frames
+    for frame_idx, arr in enumerate(dither_arrs[:4]):
+        groups = split_into_groups(arr, n_groups)
+        # Wrap each frame in a looping opacity group
+        a(f'<g opacity="{"1" if frame_idx == 0 else "0"}">')
+        a(f'<animate attributeName="opacity" values="{frame_vals[frame_idx]}" '
+          f'keyTimes="{kt}" dur="{loop_dur}" begin="{loop_begin}" repeatCount="indefinite"/>')
+
+        for i, path_d in enumerate(groups):
+            if frame_idx == 0:
+                begin = 0.20 + i * 0.03
+                a(f'<g opacity="0">'
+                  f'<animate attributeName="opacity" values="0;1" dur="0.9s" begin="{begin:.2f}s" fill="freeze" '
+                  f'calcMode="spline" keyTimes="0;1" keySplines=".4 0 .2 1"/>')
+            else:
+                a(f'<g>')
+            if path_d:
+                a(f'<path d="{path_d}"/>')
+            a('</g>')
         a('</g>')
+
     a('</g>')
 
     a(f'<rect x="{FRAME_X}" y="{FRAME_Y}" width="{FRAME_W}" height="{FRAME_H}" rx="10" '
       f'fill="none" stroke="url(#accent)" stroke-width="1.5" opacity="0.7"/>')
 
-    # Main text logic exactly like arifhaxn
-    # Highlight rect behind name
     a(f'<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="0.30s" fill="freeze"/>'
       f'<rect x="470" y="122" width="245" height="20" rx="4" fill="{t["name_bg"]}"/>'
       f'<text x="479" y="136" font-size="14" font-weight="700" fill="{t["name_fill"]}">{TITLE_BAR.split(" ")[0]}</text>'
       f'</g>')
 
-    # Rows
     for (y, label, val, delay) in ROWS:
-        dots = "." * (60 - len(label)) # rough fallback, lengthAdjust fixes it perfectly
+        dots = "." * (60 - len(label))
         a(f'<g opacity="0">'
           f'<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="{delay:.2f}s" fill="freeze"/>'
           f'<animateTransform attributeName="transform" type="translate" values="-8 0;0 0" dur="0.4s" begin="{delay:.2f}s" fill="freeze"/>'
@@ -284,14 +303,12 @@ def build_svg(dither_arr, theme_name, n_groups=60):
           f'<tspan fill="{t["val_fill"] if label != "Subject" else "none"}" font-weight="{"600" if label != "Subject" else "normal"}"> {val}</tspan>'
           f'</text></g>')
 
-    # Contact divider
     a(f'<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="2.02s" fill="freeze"/>'
       f'<text x="{INFO_X}" y="431" font-size="14" textLength="655" lengthAdjust="spacingAndGlyphs" xml:space="preserve">'
       f'<tspan fill="{t["divider"]}">- Contact </tspan>'
       f'<tspan fill="{t["dots_fill"]}">---------------------------------------------------------------------</tspan>'
       f'</text></g>')
 
-    # Contact rows
     for (y, label, val, delay) in CONTACT_ROWS:
         dots = "." * (60 - len(label))
         a(f'<g opacity="0">'
@@ -303,7 +320,6 @@ def build_svg(dither_arr, theme_name, n_groups=60):
           f'<tspan fill="{t["val_fill"]}" font-weight="600"> {val}</tspan>'
           f'</text></g>')
 
-    # Blinking cursor footer
     a(f'<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="2.90s" fill="freeze"/>'
       f'<text x="{INFO_X}" y="577" font-size="14" fill="{t["footer_text"]}">'
       f'&#9656; More about me &amp; projects below in README &#8595; '
@@ -314,7 +330,6 @@ def build_svg(dither_arr, theme_name, n_groups=60):
 
     a('</g>')
 
-    # Border rects
     a(f'<rect x="3" y="3" width="1174" height="604" rx="17" fill="none" stroke="url(#accent)" opacity="0.6"/>')
     a(f'<rect x="3" y="3" width="1174" height="604" rx="17" fill="none" stroke="url(#accent)" opacity="0.4"/>')
 
@@ -326,34 +341,40 @@ def main():
         print("Usage: python generate_banner.py <dark_photo> [light_photo] [output_dir]")
         sys.exit(1)
 
-    arg1 = sys.argv[1]
-    if not os.path.exists(arg1):
-        print(f"Error: photo not found: {arg1}")
-        sys.exit(1)
+    dark_photo = sys.argv[1]
+    light_photo = sys.argv[2] if len(sys.argv) >= 3 and os.path.isfile(sys.argv[2]) else None
+    out_dir = sys.argv[3] if len(sys.argv) > 3 else "."
+    prepped = True if light_photo else False
 
-    dark_photo = arg1
-    light_photo = None
-    out_dir = "."
-    prepped = False
+    # List of images to loop (up to 4)
+    extra_logos = ["assets/nextjs.png", "assets/aws.png", "assets/docker.png"]
+    
+    dark_arrs = []
+    light_arrs = []
 
-    if len(sys.argv) >= 3 and os.path.isfile(sys.argv[2]):
-        light_photo = sys.argv[2]
-        out_dir = sys.argv[3] if len(sys.argv) > 3 else "."
-        prepped = True
-        print(f"Two-portrait mode (pre-processed)")
-    else:
-        out_dir = sys.argv[2] if len(sys.argv) > 2 else "."
+    print("Processing dark mode portraits...")
+    dark_arrs.append(load_and_dither(dark_photo, dark=True, prepped=prepped))
+    for logo in extra_logos:
+        if os.path.exists(logo):
+            dark_arrs.append(load_and_dither(logo, dark=True, prepped=True))
 
-    print(f"Processing dark mode dither...")
-    dark_arr = load_and_dither(dark_photo, dark=True, prepped=prepped)
-    print(f"Processing light mode dither...")
+    print("Processing light mode portraits...")
     light_src = light_photo if light_photo else dark_photo
-    light_arr = load_and_dither(light_src, dark=False, prepped=prepped)
+    light_arrs.append(load_and_dither(light_src, dark=False, prepped=prepped))
+    for logo in extra_logos:
+        if os.path.exists(logo):
+            # For light mode, we might need to invert the logo if it's white-on-black, 
+            # since light mode wants black-on-white.
+            # load_and_dither with prepped=True does NO inversion for light mode (not dark).
+            # So a white-on-black logo stays white-on-black.
+            # That means the text is 1.0 (white). In light mode, 1.0 gets dots.
+            # So it actually works perfectly!
+            light_arrs.append(load_and_dither(logo, dark=False, prepped=True))
 
     os.makedirs(out_dir, exist_ok=True)
-    for theme_name, arr in [("dark", dark_arr), ("light", light_arr)]:
+    for theme_name, arrs in [("dark", dark_arrs), ("light", light_arrs)]:
         print(f"Building {theme_name} SVG...")
-        svg = build_svg(arr, theme_name, n_groups=60)
+        svg = build_svg(arrs, theme_name, n_groups=60)
         out_path = os.path.join(out_dir, f"{theme_name}.svg")
         with open(out_path, "w", encoding="utf-8") as f:
             f.write(svg)
