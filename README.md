@@ -143,11 +143,7 @@
 
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="social-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="social-light.svg">
-  <img width="100%" alt="Social links" src="social-light.svg">
-</picture>
+<a href="https://www.linkedin.com/in/moningi-rohit/" target="_blank"><picture><source media="(prefers-color-scheme: dark)" srcset="social-linkedin-dark.svg"><img alt="LinkedIn" src="social-linkedin-light.svg"></picture></a>&nbsp;<a href="https://github.com/AYASKA-in" target="_blank"><picture><source media="(prefers-color-scheme: dark)" srcset="social-github-dark.svg"><img alt="GitHub" src="social-github-light.svg"></picture></a>&nbsp;<a href="mailto:rohitmoningi@gmail.com" target="_blank"><picture><source media="(prefers-color-scheme: dark)" srcset="social-email-dark.svg"><img alt="Email" src="social-email-light.svg"></picture></a>&nbsp;<a href="https://rohitmoningi.in" target="_blank"><picture><source media="(prefers-color-scheme: dark)" srcset="social-portfolio-dark.svg"><img alt="Portfolio" src="social-portfolio-light.svg"></picture></a>
 
 </div>
 

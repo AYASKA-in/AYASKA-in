@@ -12,7 +12,7 @@ def get_icon(name):
         return '<circle cx="12" cy="12" r="9" stroke="currentColor" fill="none" stroke-width="2"/><ellipse cx="12" cy="12" rx="4" ry="9" stroke="currentColor" fill="none" stroke-width="2"/><path d="M3 12h18" stroke="currentColor" fill="none" stroke-width="2"/>'
     return ''
 
-def generate_social(theme):
+def generate_button(theme, link, index):
     if theme == 'dark':
         text_color = '#94A3B8'
         text_active = '#F8FAFC'
@@ -28,21 +28,16 @@ def generate_social(theme):
         border_color = 'rgba(8,145,178,0.2)'
         glow_color = '#0891B2'
         
-    links = [
-        {'name': 'LINKEDIN', 'url': 'https://www.linkedin.com/in/moningi-rohit/', 'icon': 'linkedin', 'delay': '0.3s'},
-        {'name': 'GITHUB', 'url': 'https://github.com/AYASKA-in', 'icon': 'github', 'delay': '0.5s'},
-        {'name': 'EMAIL', 'url': 'mailto:rohitmoningi@gmail.com', 'icon': 'email', 'delay': '0.7s'},
-        {'name': 'PORTFOLIO', 'url': 'https://rohitmoningi.in', 'icon': 'portfolio', 'delay': '0.9s'}
-    ]
-    
-    width = 1180
-    height = 60
-    
-    # Calculate button positions
+    width = 170
+    height = 50
     button_width = 160
-    gap = 20
-    total_width = len(links) * button_width + (len(links) - 1) * gap
-    start_x = (width - total_width) / 2
+    bx = 5
+    by = 5
+    bh = 36
+    
+    icon_svg = get_icon(link['id'])
+    
+    delay = index * 0.2  # stagger the animations
     
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
     <defs>
@@ -55,87 +50,67 @@ def generate_social(theme):
             <feComposite in="SourceGraphic" in2="blur" operator="over" />
         </filter>
         <style>
-            .link-text {{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; font-size: 13px; fill: {text_color}; font-weight: 600; letter-spacing: 1px; transition: fill 0.3s; }}
+            .link-text {{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; font-size: 13px; fill: {text_color}; font-weight: 600; letter-spacing: 1px; transition: fill 0.3s ease; }}
+            .icon {{ color: {text_color}; transition: color 0.3s ease; }}
+            .bg-glow {{ opacity: 0; transition: opacity 0.3s ease; }}
+            .border {{ stroke: {border_color}; transition: stroke 0.3s ease; }}
+            .cursor-dot {{ opacity: 0; transition: opacity 0.3s ease; }}
+            
+            /* Native SVG Hover Interactions */
             .btn:hover .link-text {{ fill: {text_active}; }}
-            .btn {{ cursor: pointer; }}
-            .icon {{ color: {text_color}; transition: color 0.3s; }}
             .btn:hover .icon {{ color: {text_active}; }}
+            .btn:hover .bg-glow {{ opacity: 0.15; }}
+            .btn:hover .border {{ stroke: {glow_color}; }}
+            .btn:hover .cursor-dot {{ opacity: 1; }}
         </style>
     </defs>
-    
-    <!-- Top accent line -->
-    <rect x="0" y="0" width="100%" height="1" fill="url(#accent)"/>
-    
-    <!-- Cursor Dot -->
-    <circle r="3" fill="{glow_color}" filter="url(#glow)">
-        <animateMotion dur="12s" repeatCount="indefinite" calcMode="spline"
-            keyTimes="0;0.22;0.25;0.47;0.5;0.72;0.75;0.97;1"
-            keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"
-            path="M {start_x + button_width/2} 48 L {start_x + button_width/2} 48 L {start_x + button_width + gap + button_width/2} 48 L {start_x + button_width + gap + button_width/2} 48 L {start_x + 2*button_width + 2*gap + button_width/2} 48 L {start_x + 2*button_width + 2*gap + button_width/2} 48 L {start_x + 3*button_width + 3*gap + button_width/2} 48 L {start_x + 3*button_width + 3*gap + button_width/2} 48 L {start_x + button_width/2} 48" />
-    </circle>
-"""
-    
-    for i, link in enumerate(links):
-        bx = start_x + i * (button_width + gap)
-        by = 12
-        bh = 36
-        
-        if i == 0:
-            color_values = f"{text_active}; {text_active}; {text_color}; {text_color}; {text_color}; {text_color}"
-            color_keys = "0; 0.24; 0.25; 0.75; 0.99; 1"
-        elif i == 1:
-            color_values = f"{text_color}; {text_color}; {text_active}; {text_active}; {text_color}; {text_color}"
-            color_keys = "0; 0.24; 0.25; 0.49; 0.5; 1"
-        elif i == 2:
-            color_values = f"{text_color}; {text_color}; {text_active}; {text_active}; {text_color}; {text_color}"
-            color_keys = "0; 0.49; 0.5; 0.74; 0.75; 1"
-        elif i == 3:
-            color_values = f"{text_color}; {text_color}; {text_color}; {text_color}; {text_active}; {text_active}"
-            color_keys = "0; 0.25; 0.74; 0.75; 0.99; 1"
 
-        icon_svg = get_icon(link['icon'])
-        
-        svg += f"""
     <g class="btn">
-        <a href="{link['url']}" target="_blank">
-            <!-- Background glow when active -->
-            <rect x="{bx}" y="{by}" width="{button_width}" height="{bh}" rx="6" fill="{glow_color}" opacity="0">
-                <animate attributeName="opacity" values="0; 0; 0.15; 0.15; 0; 0" keyTimes="{color_keys}" dur="12s" repeatCount="indefinite" />
-            </rect>
-            <!-- Border -->
-            <rect x="{bx}" y="{by}" width="{button_width}" height="{bh}" rx="6" fill="transparent" stroke="{border_color}" stroke-width="1"/>
-            <svg x="{bx + 15}" y="{by + 6}" width="24" height="24" viewBox="0 0 24 24" class="icon">
-                {icon_svg}
-                <animate attributeName="color" values="{color_values}" keyTimes="{color_keys}" dur="12s" repeatCount="indefinite" />
-            </svg>
-            <text x="{bx + 45}" y="{by + 22}" class="link-text">
-                {link['name']}
-                <animate attributeName="fill" values="{color_values}" keyTimes="{color_keys}" dur="12s" repeatCount="indefinite" />
-            </text>
-            <!-- Animated underline -->
-            <rect x="{bx + button_width/2}" y="{by + bh - 2}" width="0" height="2" fill="url(#accent)">
-                <animate attributeName="width" from="0" to="{button_width - 20}" begin="{link['delay']}" dur="0.8s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
-                <animate attributeName="x" from="{bx + button_width/2}" to="{bx + 10}" begin="{link['delay']}" dur="0.8s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
-            </rect>
-        </a>
+        <!-- Background glow when active/hovered -->
+        <rect x="{bx}" y="{by}" width="{button_width}" height="{bh}" rx="6" fill="{glow_color}" class="bg-glow" />
+        
+        <!-- Border -->
+        <rect x="{bx}" y="{by}" width="{button_width}" height="{bh}" rx="6" fill="transparent" stroke-width="1" class="border" />
+        
+        <!-- Icon -->
+        <svg x="{bx + 15}" y="{by + 6}" width="24" height="24" viewBox="0 0 24 24" class="icon">
+            {icon_svg}
+        </svg>
+        
+        <!-- Text -->
+        <text x="{bx + 45}" y="{by + 22}" class="link-text">{link['name']}</text>
+        
+        <!-- Animated underline that draws in -->
+        <rect x="{bx + 10}" y="{by + bh - 2}" width="0" height="2" fill="url(#accent)">
+            <animate attributeName="width" from="0" to="{button_width - 20}" begin="{delay}s" dur="0.8s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+        </rect>
+        
+        <!-- Interactive Hover Cursor Dot -->
+        <circle cx="0" cy="{by + bh - 1}" r="3" fill="{glow_color}" filter="url(#glow)" class="cursor-dot">
+            <animate attributeName="cx" values="{bx + 10}; {bx + button_width - 10}; {bx + 10}" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+        </circle>
     </g>
-"""
-
-    svg += "</svg>"
+</svg>"""
     return svg
 
 def main():
     out_dir = sys.argv[1] if len(sys.argv) > 1 else '.'
     os.makedirs(out_dir, exist_ok=True)
     
-    dark = generate_social('dark')
-    light = generate_social('light')
+    links = [
+        {'id': 'linkedin', 'name': 'LINKEDIN', 'url': 'https://www.linkedin.com/in/moningi-rohit/'},
+        {'id': 'github', 'name': 'GITHUB', 'url': 'https://github.com/AYASKA-in'},
+        {'id': 'email', 'name': 'EMAIL', 'url': 'mailto:rohitmoningi@gmail.com'},
+        {'id': 'portfolio', 'name': 'PORTFOLIO', 'url': 'https://rohitmoningi.in'}
+    ]
     
-    with open(os.path.join(out_dir, 'social-dark.svg'), 'w', encoding='utf-8') as f:
-        f.write(dark)
-        
-    with open(os.path.join(out_dir, 'social-light.svg'), 'w', encoding='utf-8') as f:
-        f.write(light)
+    for theme in ['dark', 'light']:
+        for i, link in enumerate(links):
+            svg = generate_button(theme, link, i)
+            filename = f"social-{link['id']}-{theme}.svg"
+            with open(os.path.join(out_dir, filename), 'w', encoding='utf-8') as f:
+                f.write(svg)
+            print(f"Generated {filename}")
 
 if __name__ == '__main__':
     main()
