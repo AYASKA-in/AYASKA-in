@@ -71,7 +71,7 @@ def generate_social(theme):
         <animateMotion dur="12s" repeatCount="indefinite" calcMode="spline"
             keyTimes="0;0.22;0.25;0.47;0.5;0.72;0.75;0.97;1"
             keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"
-            path="M {start_x + button_width/2} {height-5} L {start_x + button_width/2} {height-5} L {start_x + button_width + gap + button_width/2} {height-5} L {start_x + button_width + gap + button_width/2} {height-5} L {start_x + 2*button_width + 2*gap + button_width/2} {height-5} L {start_x + 2*button_width + 2*gap + button_width/2} {height-5} L {start_x + 3*button_width + 3*gap + button_width/2} {height-5} L {start_x + 3*button_width + 3*gap + button_width/2} {height-5} L {start_x + button_width/2} {height-5}" />
+            path="M {start_x + button_width/2} 48 L {start_x + button_width/2} 48 L {start_x + button_width + gap + button_width/2} 48 L {start_x + button_width + gap + button_width/2} 48 L {start_x + 2*button_width + 2*gap + button_width/2} 48 L {start_x + 2*button_width + 2*gap + button_width/2} 48 L {start_x + 3*button_width + 3*gap + button_width/2} 48 L {start_x + 3*button_width + 3*gap + button_width/2} 48 L {start_x + button_width/2} 48" />
     </circle>
 """
     

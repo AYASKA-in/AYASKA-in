@@ -168,8 +168,9 @@ def card(p, x, y, idx):
     cat_color = p.get("category_color", CYAN)
     if cat:
         cat_w = len(cat) * 6.5 + 16
-        a(f'<rect x="16" y="36" width="{cat_w:.0f}" height="16" rx="3" fill="{cat_color}" opacity="0.18"/>')
-        a(f'<text x="24" y="47" font-size="8.5" font-weight="700" letter-spacing="1.5" fill="{cat_color}">{esc(cat)}</text>')
+        bx = CARD_W - cat_w - 16
+        a(f'<rect x="{bx:.0f}" y="42" width="{cat_w:.0f}" height="16" rx="3" fill="{cat_color}" opacity="0.18"/>')
+        a(f'<text x="{bx + cat_w/2:.0f}" y="53" text-anchor="middle" font-size="8.5" font-weight="700" letter-spacing="1.5" fill="{cat_color}">{esc(cat)}</text>')
 
     # Sci-fi scanner line sweep
     scan_delay = b + 1.5 + idx * 1.2
