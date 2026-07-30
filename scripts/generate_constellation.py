@@ -34,6 +34,14 @@ def generate_constellation(mode, out_dir):
         <stop offset="0%" stop-color="{header_color}" stop-opacity="0.8"/>
         <stop offset="100%" stop-color="{header_color}" stop-opacity="0"/>
     </linearGradient>
+    <radialGradient id="nebula1-{mode}" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="{star_color}" stop-opacity="0.08"/>
+        <stop offset="100%" stop-color="{star_color}" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula2-{mode}" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#A78BFA" stop-opacity="0.06"/>
+        <stop offset="100%" stop-color="#A78BFA" stop-opacity="0"/>
+    </radialGradient>
 </defs>
 '''
 
@@ -47,9 +55,26 @@ def generate_constellation(mode, out_dir):
         svg += f'    <circle cx="{cx}" cy="{cy}" r="0.8" fill="{bg_star_color}" opacity="{opacity}"/>\n'
     svg += '</g>\n'
 
+    # Nebula Backdrops
+    svg += f'''
+    <rect x="150" y="50" width="300" height="200" fill="url(#nebula1-{mode})"/>
+    <rect x="700" y="80" width="250" height="150" fill="url(#nebula2-{mode})"/>
+    '''
+
     # Main rotating group
     svg += f'''<g>
     <animateTransform attributeName="transform" type="rotate" values="-1.5 {width/2} {height/2}; 1.5 {width/2} {height/2}; -1.5 {width/2} {height/2}" dur="25s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"/>
+    
+    <!-- Shooting Star -->
+    <g opacity="0">
+        <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.05;0.1;0.15;1" dur="15s" repeatCount="indefinite"/>
+        <line x1="-100" y1="50" x2="-60" y2="70" stroke="{star_color}" stroke-width="1" filter="url(#glow-{mode})">
+            <animate attributeName="x1" values="-100; {width+100}" dur="15s" repeatCount="indefinite" />
+            <animate attributeName="x2" values="-60; {width+140}" dur="15s" repeatCount="indefinite" />
+            <animate attributeName="y1" values="50; {height+50}" dur="15s" repeatCount="indefinite" />
+            <animate attributeName="y2" values="70; {height+70}" dur="15s" repeatCount="indefinite" />
+        </line>
+    </g>
 '''
 
     # Header text
@@ -113,13 +138,13 @@ def generate_constellation(mode, out_dir):
         dur = random.uniform(2, 5)
         # Glow ring
         svg += f'''        <g>
-            <circle cx="{cx}" cy="{cy}" r="8" fill="{star_color}" opacity="0.2" filter="url(#glow-{mode})">
+            <circle cx="{cx}" cy="{cy}" r="14" fill="{star_color}" opacity="0.2" filter="url(#glow-{mode})">
                 <animate attributeName="opacity" values="0.1;0.4;0.1" dur="{dur:.1f}s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"/>
             </circle>
             <circle cx="{cx}" cy="{cy}" r="3" fill="{star_color}">
                 <animate attributeName="opacity" values="0.4;1;0.4" dur="{dur:.1f}s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"/>
             </circle>
-            <text x="{cx}" y="{cy + 18}" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" fill="{label_color}" text-anchor="middle">{name}</text>
+            <text x="{cx}" y="{cy + 22}" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" fill="{label_color}" text-anchor="middle">{name}</text>
         </g>\n'''
     svg += '    </g>\n'
 

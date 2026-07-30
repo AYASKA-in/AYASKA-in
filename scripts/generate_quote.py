@@ -45,6 +45,13 @@ def generate_svg(theme='dark'):
     <!-- Border between title and body -->
     <line x1="0" y1="30" x2="{width}" y2="30" stroke="{border_color}" stroke-width="1"/>
     
+    <!-- CRT Scan Line -->
+    <line x1="0" y1="30" x2="{width}" y2="30" stroke="{prompt_color}" stroke-width="1.5" opacity="0">
+        <animate attributeName="y1" values="30;{height};30" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="30;{height};30" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;0.15;0" dur="3s" repeatCount="indefinite" />
+    </line>
+
     <g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="16" fill="{text_color}">
 '''
     

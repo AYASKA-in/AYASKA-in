@@ -98,6 +98,11 @@ def generate_social(theme):
         svg += f"""
     <g class="btn">
         <a href="{link['url']}" target="_blank">
+            <!-- Background glow when active -->
+            <rect x="{bx}" y="{by}" width="{button_width}" height="{bh}" rx="6" fill="{glow_color}" opacity="0">
+                <animate attributeName="opacity" values="0; 0; 0.15; 0.15; 0; 0" keyTimes="{color_keys}" dur="12s" repeatCount="indefinite" />
+            </rect>
+            <!-- Border -->
             <rect x="{bx}" y="{by}" width="{button_width}" height="{bh}" rx="6" fill="transparent" stroke="{border_color}" stroke-width="1"/>
             <svg x="{bx + 15}" y="{by + 6}" width="24" height="24" viewBox="0 0 24 24" class="icon">
                 {icon_svg}

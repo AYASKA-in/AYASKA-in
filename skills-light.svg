@@ -1,0 +1,321 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="320" viewBox="0 0 1180 320">
+  <rect width="100%" height="100%" fill="#F8FAFC" />
+  <style>
+    text { font-family: ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace; }
+    .title { font-size: 18px; font-weight: bold; fill: #0F172A; }
+    .cat-title { font-size: 14px; font-weight: bold; letter-spacing: 2px; }
+    .skill-label { font-size: 13px; fill: #475569; }
+    .skill-percent { font-size: 13px; font-weight: bold; fill: #0F172A; }
+  </style>
+  <defs>
+    <linearGradient id="grad-title-light" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22D3EE" />
+      <stop offset="100%" stop-color="#A78BFA" />
+    </linearGradient>
+    <linearGradient id="grad-0-light" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22D3EE" />
+      <stop offset="100%" stop-color="#67E8F9" />
+    </linearGradient>
+    <linearGradient id="grad-1-light" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A78BFA" />
+      <stop offset="100%" stop-color="#C4B5FD" />
+    </linearGradient>
+    <linearGradient id="grad-2-light" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#34D399" />
+    </linearGradient>
+    <linearGradient id="grad-3-light" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#FBBF24" />
+    </linearGradient>
+  </defs>
+
+  <!-- Header -->
+  <text x="60" y="45" class="title">SKILL.MATRIX</text>
+  <rect x="60" y="55" width="120" height="2" fill="url(#grad-title-{mode})" />
+
+  <g transform="translate(60, 90)">
+    <text x="0" y="0" class="cat-title" fill="#22D3EE">FRONTEND</text>
+    <g transform="translate(0, 20)">
+      <text x="0" y="9" class="skill-label">Next.js</text>
+      <!-- Track -->
+      <rect x="120" y="0" width="240" height="8" rx="4" fill="rgba(100,116,139,0.15)" />
+      <!-- Fill -->
+      <rect x="120" y="0" width="0" height="8" rx="4" fill="url(#grad-0-light)">
+        <animate attributeName="width" from="0" to="216.0" begin="0.0s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+      </rect>
+      <!-- Percent -->
+      <text x="370" y="9" class="skill-percent">90%</text>
+      
+      <!-- Pulsing Dot -->
+      <circle cx="120" cy="4" r="4" fill="#FFFFFF" opacity="0">
+        <animate attributeName="cx" from="120" to="336.0" begin="0.0s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+        <animate attributeName="opacity" values="0;1;0.5;1" keyTimes="0;0.5;0.75;1" begin="1.0s" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <g transform="translate(0, 44)">
+      <text x="0" y="9" class="skill-label">React</text>
+      <!-- Track -->
+      <rect x="120" y="0" width="240" height="8" rx="4" fill="rgba(100,116,139,0.15)" />
+      <!-- Fill -->
+      <rect x="120" y="0" width="0" height="8" rx="4" fill="url(#grad-0-light)">
+        <animate attributeName="width" from="0" to="211.2" begin="0.15s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+      </rect>
+      <!-- Percent -->
+      <text x="370" y="9" class="skill-percent">88%</text>
+      
+      <!-- Pulsing Dot -->
+      <circle cx="120" cy="4" r="4" fill="#FFFFFF" opacity="0">
+        <animate attributeName="cx" from="120" to="331.2" begin="0.15s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+        <animate attributeName="opacity" values="0;1;0.5;1" keyTimes="0;0.5;0.75;1" begin="1.15s" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <g transform="translate(0, 68)">
+      <text x="0" y="9" class="skill-label">TypeScript</text>
+      <!-- Track -->
+      <rect x="120" y="0" width="240" height="8" rx="4" fill="rgba(100,116,139,0.15)" />
+      <!-- Fill -->
+      <rect x="120" y="0" width="0" height="8" rx="4" fill="url(#grad-0-light)">
+        <animate attributeName="width" from="0" to="204.0" begin="0.3s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+      </rect>
+      <!-- Percent -->
+      <text x="370" y="9" class="skill-percent">85%</text>
+      
+      <!-- Pulsing Dot -->
+      <circle cx="120" cy="4" r="4" fill="#FFFFFF" opacity="0">
+        <animate attributeName="cx" from="120" to="324.0" begin="0.3s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+        <animate attributeName="opacity" values="0;1;0.5;1" keyTimes="0;0.5;0.75;1" begin="1.3s" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <g transform="translate(0, 92)">
+      <text x="0" y="9" class="skill-label">HTML/CSS</text>
+      <!-- Track -->
+      <rect x="120" y="0" width="240" height="8" rx="4" fill="rgba(100,116,139,0.15)" />
+      <!-- Fill -->
+      <rect x="120" y="0" width="0" height="8" rx="4" fill="url(#grad-0-light)">
+        <animate attributeName="width" from="0" to="196.79999999999998" begin="0.44999999999999996s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+      </rect>
+      <!-- Percent -->
+      <text x="370" y="9" class="skill-percent">82%</text>
+      
+      <!-- Pulsing Dot -->
+      <circle cx="120" cy="4" r="4" fill="#FFFFFF" opacity="0">
+        <animate attributeName="cx" from="120" to="316.79999999999995" begin="0.44999999999999996s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+        <animate attributeName="opacity" values="0;1;0.5;1" keyTimes="0;0.5;0.75;1" begin="1.45s" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+  </g>
+  <g transform="translate(600, 90)">
+    <text x="0" y="0" class="cat-title" fill="#A78BFA">BACKEND</text>
+    <g transform="translate(0, 20)">
+      <text x="0" y="9" class="skill-label">FastAPI</text>
+      <!-- Track -->
+      <rect x="120" y="0" width="240" height="8" rx="4" fill="rgba(100,116,139,0.15)" />
+      <!-- Fill -->
+      <rect x="120" y="0" width="0" height="8" rx="4" fill="url(#grad-1-light)">
+        <animate attributeName="width" from="0" to="208.8" begin="0.6s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+      </rect>
+      <!-- Percent -->
+      <text x="370" y="9" class="skill-percent">87%</text>
+      
+      <!-- Pulsing Dot -->
+      <circle cx="120" cy="4" r="4" fill="#FFFFFF" opacity="0">
+        <animate attributeName="cx" from="120" to="328.8" begin="0.6s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+        <animate attributeName="opacity" values="0;1;0.5;1" keyTimes="0;0.5;0.75;1" begin="1.6s" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <g transform="translate(0, 44)">
+      <text x="0" y="9" class="skill-label">Node.js</text>
+      <!-- Track -->
+      <rect x="120" y="0" width="240" height="8" rx="4" fill="rgba(100,116,139,0.15)" />
+      <!-- Fill -->
+      <rect x="120" y="0" width="0" height="8" rx="4" fill="url(#grad-1-light)">
+        <animate attributeName="width" from="0" to="192.0" begin="0.75s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+      </rect>
+      <!-- Percent -->
+      <text x="370" y="9" class="skill-percent">80%</text>
+      
+      <!-- Pulsing Dot -->
+      <circle cx="120" cy="4" r="4" fill="#FFFFFF" opacity="0">
+        <animate attributeName="cx" from="120" to="312.0" begin="0.75s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+        <animate attributeName="opacity" values="0;1;0.5;1" keyTimes="0;0.5;0.75;1" begin="1.75s" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <g transform="translate(0, 68)">
+      <text x="0" y="9" class="skill-label">PostgreSQL</text>
+      <!-- Track -->
+      <rect x="120" y="0" width="240" height="8" rx="4" fill="rgba(100,116,139,0.15)" />
+      <!-- Fill -->
+      <rect x="120" y="0" width="0" height="8" rx="4" fill="url(#grad-1-light)">
+        <animate attributeName="width" from="0" to="187.20000000000002" begin="0.8999999999999999s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+      </rect>
+      <!-- Percent -->
+      <text x="370" y="9" class="skill-percent">78%</text>
+      
+      <!-- Pulsing Dot -->
+      <circle cx="120" cy="4" r="4" fill="#FFFFFF" opacity="0">
+        <animate attributeName="cx" from="120" to="307.20000000000005" begin="0.8999999999999999s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+        <animate attributeName="opacity" values="0;1;0.5;1" keyTimes="0;0.5;0.75;1" begin="1.9s" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <g transform="translate(0, 92)">
+      <text x="0" y="9" class="skill-label">Python</text>
+      <!-- Track -->
+      <rect x="120" y="0" width="240" height="8" rx="4" fill="rgba(100,116,139,0.15)" />
+      <!-- Fill -->
+      <rect x="120" y="0" width="0" height="8" rx="4" fill="url(#grad-1-light)">
+        <animate attributeName="width" from="0" to="220.8" begin="1.05s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+      </rect>
+      <!-- Percent -->
+      <text x="370" y="9" class="skill-percent">92%</text>
+      
+      <!-- Pulsing Dot -->
+      <circle cx="120" cy="4" r="4" fill="#FFFFFF" opacity="0">
+        <animate attributeName="cx" from="120" to="340.8" begin="1.05s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+        <animate attributeName="opacity" values="0;1;0.5;1" keyTimes="0;0.5;0.75;1" begin="2.05s" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+  </g>
+  <g transform="translate(60, 210)">
+    <text x="0" y="0" class="cat-title" fill="#10B981">CLOUD / DEVOPS</text>
+    <g transform="translate(0, 20)">
+      <text x="0" y="9" class="skill-label">AWS</text>
+      <!-- Track -->
+      <rect x="120" y="0" width="240" height="8" rx="4" fill="rgba(100,116,139,0.15)" />
+      <!-- Fill -->
+      <rect x="120" y="0" width="0" height="8" rx="4" fill="url(#grad-2-light)">
+        <animate attributeName="width" from="0" to="180.0" begin="1.2s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+      </rect>
+      <!-- Percent -->
+      <text x="370" y="9" class="skill-percent">75%</text>
+      
+      <!-- Pulsing Dot -->
+      <circle cx="120" cy="4" r="4" fill="#FFFFFF" opacity="0">
+        <animate attributeName="cx" from="120" to="300.0" begin="1.2s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+        <animate attributeName="opacity" values="0;1;0.5;1" keyTimes="0;0.5;0.75;1" begin="2.2s" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <g transform="translate(0, 44)">
+      <text x="0" y="9" class="skill-label">Docker</text>
+      <!-- Track -->
+      <rect x="120" y="0" width="240" height="8" rx="4" fill="rgba(100,116,139,0.15)" />
+      <!-- Fill -->
+      <rect x="120" y="0" width="0" height="8" rx="4" fill="url(#grad-2-light)">
+        <animate attributeName="width" from="0" to="172.79999999999998" begin="1.3499999999999999s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+      </rect>
+      <!-- Percent -->
+      <text x="370" y="9" class="skill-percent">72%</text>
+      
+      <!-- Pulsing Dot -->
+      <circle cx="120" cy="4" r="4" fill="#FFFFFF" opacity="0">
+        <animate attributeName="cx" from="120" to="292.79999999999995" begin="1.3499999999999999s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+        <animate attributeName="opacity" values="0;1;0.5;1" keyTimes="0;0.5;0.75;1" begin="2.3499999999999996s" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <g transform="translate(0, 68)">
+      <text x="0" y="9" class="skill-label">Vercel</text>
+      <!-- Track -->
+      <rect x="120" y="0" width="240" height="8" rx="4" fill="rgba(100,116,139,0.15)" />
+      <!-- Fill -->
+      <rect x="120" y="0" width="0" height="8" rx="4" fill="url(#grad-2-light)">
+        <animate attributeName="width" from="0" to="204.0" begin="1.5s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+      </rect>
+      <!-- Percent -->
+      <text x="370" y="9" class="skill-percent">85%</text>
+      
+      <!-- Pulsing Dot -->
+      <circle cx="120" cy="4" r="4" fill="#FFFFFF" opacity="0">
+        <animate attributeName="cx" from="120" to="324.0" begin="1.5s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+        <animate attributeName="opacity" values="0;1;0.5;1" keyTimes="0;0.5;0.75;1" begin="2.5s" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <g transform="translate(0, 92)">
+      <text x="0" y="9" class="skill-label">Supabase</text>
+      <!-- Track -->
+      <rect x="120" y="0" width="240" height="8" rx="4" fill="rgba(100,116,139,0.15)" />
+      <!-- Fill -->
+      <rect x="120" y="0" width="0" height="8" rx="4" fill="url(#grad-2-light)">
+        <animate attributeName="width" from="0" to="187.20000000000002" begin="1.65s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+      </rect>
+      <!-- Percent -->
+      <text x="370" y="9" class="skill-percent">78%</text>
+      
+      <!-- Pulsing Dot -->
+      <circle cx="120" cy="4" r="4" fill="#FFFFFF" opacity="0">
+        <animate attributeName="cx" from="120" to="307.20000000000005" begin="1.65s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+        <animate attributeName="opacity" values="0;1;0.5;1" keyTimes="0;0.5;0.75;1" begin="2.65s" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+  </g>
+  <g transform="translate(600, 210)">
+    <text x="0" y="0" class="cat-title" fill="#F59E0B">AI / ML</text>
+    <g transform="translate(0, 20)">
+      <text x="0" y="9" class="skill-label">PyTorch</text>
+      <!-- Track -->
+      <rect x="120" y="0" width="240" height="8" rx="4" fill="rgba(100,116,139,0.15)" />
+      <!-- Fill -->
+      <rect x="120" y="0" width="0" height="8" rx="4" fill="url(#grad-3-light)">
+        <animate attributeName="width" from="0" to="192.0" begin="1.7999999999999998s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+      </rect>
+      <!-- Percent -->
+      <text x="370" y="9" class="skill-percent">80%</text>
+      
+      <!-- Pulsing Dot -->
+      <circle cx="120" cy="4" r="4" fill="#FFFFFF" opacity="0">
+        <animate attributeName="cx" from="120" to="312.0" begin="1.7999999999999998s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+        <animate attributeName="opacity" values="0;1;0.5;1" keyTimes="0;0.5;0.75;1" begin="2.8s" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <g transform="translate(0, 44)">
+      <text x="0" y="9" class="skill-label">TensorFlow</text>
+      <!-- Track -->
+      <rect x="120" y="0" width="240" height="8" rx="4" fill="rgba(100,116,139,0.15)" />
+      <!-- Fill -->
+      <rect x="120" y="0" width="0" height="8" rx="4" fill="url(#grad-3-light)">
+        <animate attributeName="width" from="0" to="168.0" begin="1.95s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+      </rect>
+      <!-- Percent -->
+      <text x="370" y="9" class="skill-percent">70%</text>
+      
+      <!-- Pulsing Dot -->
+      <circle cx="120" cy="4" r="4" fill="#FFFFFF" opacity="0">
+        <animate attributeName="cx" from="120" to="288.0" begin="1.95s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+        <animate attributeName="opacity" values="0;1;0.5;1" keyTimes="0;0.5;0.75;1" begin="2.95s" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <g transform="translate(0, 68)">
+      <text x="0" y="9" class="skill-label">Grad-CAM</text>
+      <!-- Track -->
+      <rect x="120" y="0" width="240" height="8" rx="4" fill="rgba(100,116,139,0.15)" />
+      <!-- Fill -->
+      <rect x="120" y="0" width="0" height="8" rx="4" fill="url(#grad-3-light)">
+        <animate attributeName="width" from="0" to="180.0" begin="2.1s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+      </rect>
+      <!-- Percent -->
+      <text x="370" y="9" class="skill-percent">75%</text>
+      
+      <!-- Pulsing Dot -->
+      <circle cx="120" cy="4" r="4" fill="#FFFFFF" opacity="0">
+        <animate attributeName="cx" from="120" to="300.0" begin="2.1s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+        <animate attributeName="opacity" values="0;1;0.5;1" keyTimes="0;0.5;0.75;1" begin="3.1s" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <g transform="translate(0, 92)">
+      <text x="0" y="9" class="skill-label">LangChain</text>
+      <!-- Track -->
+      <rect x="120" y="0" width="240" height="8" rx="4" fill="rgba(100,116,139,0.15)" />
+      <!-- Fill -->
+      <rect x="120" y="0" width="0" height="8" rx="4" fill="url(#grad-3-light)">
+        <animate attributeName="width" from="0" to="163.20000000000002" begin="2.25s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+      </rect>
+      <!-- Percent -->
+      <text x="370" y="9" class="skill-percent">68%</text>
+      
+      <!-- Pulsing Dot -->
+      <circle cx="120" cy="4" r="4" fill="#FFFFFF" opacity="0">
+        <animate attributeName="cx" from="120" to="283.20000000000005" begin="2.25s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+        <animate attributeName="opacity" values="0;1;0.5;1" keyTimes="0;0.5;0.75;1" begin="3.25s" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+  </g>
+</svg>

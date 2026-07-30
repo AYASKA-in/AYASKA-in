@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="8">
+    <defs>
+        <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#7C3AED" />
+            <stop offset="100%" stop-color="#22D3EE" />
+        </linearGradient>
+        <linearGradient id="shimmer-grad" x1="0%" y1="0%" x2="100%" y2="0%" gradientTransform="rotate(45)">
+            <stop offset="0%" stop-color="transparent" />
+            <stop offset="50%" stop-color="rgba(167,139,250,0.08)" />
+            <stop offset="100%" stop-color="transparent" />
+        </linearGradient>
+        <clipPath id="bottom-clip">
+            <rect x="0" y="-12" width="1180" height="20" rx="12" />
+        </clipPath>
+    </defs>
+    
+    <g clip-path="url(#bottom-clip)">
+        <rect width="1180" height="8" fill="#0C1426" />
+        
+        <!-- Shimmer -->
+        <rect x="-100%" y="-10" width="300" height="100" fill="url(#shimmer-grad)">
+            <animateTransform attributeName="transform" type="translate" from="-200 0" to="1400 0" dur="4s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.2 1" />
+        </rect>
+        
+        <!-- Border line (top edge) -->
+        <rect x="0" y="0" width="1180" height="2" fill="url(#border-grad)" />
+    </g>
+</svg>
