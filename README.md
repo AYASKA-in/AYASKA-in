@@ -2,16 +2,16 @@
 <!-- GitHub automatically shows dark.svg in dark mode and light.svg in light mode -->
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/light.svg">
-  <img alt="Moningi Rohit" src="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="light.svg">
+  <img alt="Moningi Rohit" src="light.svg">
 </picture>
 
 <!-- ═══ circuit divider ═══ -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-light.svg">
-  <img width="100%" alt="" src="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="divider-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="divider-light.svg">
+  <img width="100%" alt="" src="divider-light.svg">
 </picture>
 
 <!-- ===== STREAK STATS ===== -->
@@ -27,9 +27,9 @@
 
 <!-- ═══ circuit divider ═══ -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-light.svg">
-  <img width="100%" alt="" src="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="divider-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="divider-light.svg">
+  <img width="100%" alt="" src="divider-light.svg">
 </picture>
 
 <!-- ===== GITHUB STATS ===== -->
@@ -38,35 +38,28 @@
 
 <!-- Stats Top Frame -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/stats-frame-top-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/stats-frame-top-light.svg">
-  <img width="100%" alt="Stats frame top" src="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/stats-frame-top-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="stats-frame-top-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="stats-frame-top-light.svg">
+  <img width="100%" alt="Stats frame top" src="stats-frame-top-light.svg">
 </picture>
 
 <!-- Stats + Top languages — side by side -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-sigma-rosy-28.vercel.app/api?username=AYASKA-in&show_icons=true&count_private=true&include_all_commits=true&hide_rank=true&hide_border=true&title_color=22D3EE&icon_color=A78BFA&text_color=94A3B8&bg_color=0C1426&card_width=500" />
-  <img width="49%" src="https://github-readme-stats-sigma-rosy-28.vercel.app/api?username=AYASKA-in&show_icons=true&count_private=true&include_all_commits=true&hide_rank=true&hide_border=true&title_color=0891B2&icon_color=7C3AED&text_color=64748B&bg_color=FFFFFF&card_width=500" alt="Rohit's GitHub stats" />
-</picture>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-sigma-rosy-28.vercel.app/api/top-langs/?username=AYASKA-in&layout=compact&langs_count=8&hide_border=true&title_color=22D3EE&text_color=94A3B8&bg_color=0C1426&card_width=500" />
-  <img width="49%" src="https://github-readme-stats-sigma-rosy-28.vercel.app/api/top-langs/?username=AYASKA-in&layout=compact&langs_count=8&hide_border=true&title_color=0891B2&text_color=64748B&bg_color=FFFFFF&card_width=500" alt="Top languages" />
-</picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-sigma-rosy-28.vercel.app/api?username=AYASKA-in&show_icons=true&count_private=true&include_all_commits=true&hide_rank=true&hide_border=true&title_color=22D3EE&icon_color=A78BFA&text_color=94A3B8&bg_color=0C1426&card_width=500" /><img width="49%" src="https://github-readme-stats-sigma-rosy-28.vercel.app/api?username=AYASKA-in&show_icons=true&count_private=true&include_all_commits=true&hide_rank=true&hide_border=true&title_color=0891B2&icon_color=7C3AED&text_color=64748B&bg_color=FFFFFF&card_width=500" alt="Rohit's GitHub stats" /></picture>&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-sigma-rosy-28.vercel.app/api/top-langs/?username=AYASKA-in&layout=compact&langs_count=8&hide_border=true&title_color=22D3EE&text_color=94A3B8&bg_color=0C1426&card_width=500" /><img width="49%" src="https://github-readme-stats-sigma-rosy-28.vercel.app/api/top-langs/?username=AYASKA-in&layout=compact&langs_count=8&hide_border=true&title_color=0891B2&text_color=64748B&bg_color=FFFFFF&card_width=500" alt="Top languages" /></picture>
 
 <!-- Stats Bottom Frame -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/stats-frame-bottom-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/stats-frame-bottom-light.svg">
-  <img width="100%" alt="Stats frame bottom" src="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/stats-frame-bottom-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="stats-frame-bottom-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="stats-frame-bottom-light.svg">
+  <img width="100%" alt="Stats frame bottom" src="stats-frame-bottom-light.svg">
 </picture>
 
 </div>
 
 <!-- ═══ circuit divider ═══ -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-light.svg">
-  <img width="100%" alt="" src="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="divider-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="divider-light.svg">
+  <img width="100%" alt="" src="divider-light.svg">
 </picture>
 
 <!-- ===== SKILLS MATRIX ===== -->
@@ -74,18 +67,18 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/skills-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/skills-light.svg">
-  <img width="100%" alt="Skill Matrix" src="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/skills-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="skills-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="skills-light.svg">
+  <img width="100%" alt="Skill Matrix" src="skills-light.svg">
 </picture>
 
 </div>
 
 <!-- ═══ circuit divider ═══ -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-light.svg">
-  <img width="100%" alt="" src="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="divider-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="divider-light.svg">
+  <img width="100%" alt="" src="divider-light.svg">
 </picture>
 
 <!-- ===== TECH CONSTELLATION ===== -->
@@ -93,18 +86,18 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/constellation-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/constellation-light.svg">
-  <img width="100%" alt="Tech Stack Constellation" src="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/constellation-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="constellation-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="constellation-light.svg">
+  <img width="100%" alt="Tech Stack Constellation" src="constellation-light.svg">
 </picture>
 
 </div>
 
 <!-- ═══ circuit divider ═══ -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-light.svg">
-  <img width="100%" alt="" src="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="divider-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="divider-light.svg">
+  <img width="100%" alt="" src="divider-light.svg">
 </picture>
 
 <!-- ===== CONTRIBUTION SNAKE ===== -->
@@ -129,9 +122,9 @@
 
 <!-- ═══ circuit divider ═══ -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-light.svg">
-  <img width="100%" alt="" src="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="divider-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="divider-light.svg">
+  <img width="100%" alt="" src="divider-light.svg">
 </picture>
 
 <!-- ===== TYPING TERMINAL QUOTE ===== -->
@@ -139,9 +132,9 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/quote-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/quote-light.svg">
-  <img width="100%" alt="Terminal quote" src="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/quote-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="quote-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="quote-light.svg">
+  <img width="100%" alt="Terminal quote" src="quote-light.svg">
 </picture>
 
 </div>
@@ -151,9 +144,9 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/social-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/social-light.svg">
-  <img width="100%" alt="Social links" src="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/social-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="social-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="social-light.svg">
+  <img width="100%" alt="Social links" src="social-light.svg">
 </picture>
 
 </div>
