@@ -26,7 +26,7 @@ def generate_svg(output_dir):
 
     for theme_name, colors in themes.items():
         # Top frame
-        top_svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="50">
+        top_svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="50" viewBox="0 0 1180 50">
     <defs>
         <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stop-color="{colors['border_start']}" />
@@ -56,18 +56,18 @@ def generate_svg(output_dir):
         <circle cx="60" cy="25" r="6" fill="#27C93F" />
         
         <!-- Title -->
-        <text x="590" y="30" font-family="{font_family}" font-size="14" fill="{colors['text']}" text-anchor="middle">rohit@ayaska — ~/stats</text>
+        <text x="590" y="30" font-family="{font_family}" font-size="14" fill="{colors['text']}" text-anchor="middle">rohit@ayaska - ~/stats</text>
         
         <!-- Border line -->
         <rect x="0" y="48" width="1180" height="2" fill="url(#border-grad)" />
     </g>
 </svg>"""
         
-        with open(os.path.join(output_dir, f'stats-frame-top-{theme_name}.svg'), 'w') as f:
+        with open(os.path.join(output_dir, f'stats-frame-top-{theme_name}.svg'), 'w', encoding='utf-8') as f:
             f.write(top_svg)
         
         # Bottom frame
-        bottom_svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="8">
+        bottom_svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="8" viewBox="0 0 1180 8">
     <defs>
         <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stop-color="{colors['border_start']}" />
@@ -96,7 +96,7 @@ def generate_svg(output_dir):
     </g>
 </svg>"""
 
-        with open(os.path.join(output_dir, f'stats-frame-bottom-{theme_name}.svg'), 'w') as f:
+        with open(os.path.join(output_dir, f'stats-frame-bottom-{theme_name}.svg'), 'w', encoding='utf-8') as f:
             f.write(bottom_svg)
             
     print("SVG generation complete.")

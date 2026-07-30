@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="50">
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="50" viewBox="0 0 1180 50">
     <defs>
         <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stop-color="#7C3AED" />
@@ -28,7 +28,7 @@
         <circle cx="60" cy="25" r="6" fill="#27C93F" />
         
         <!-- Title -->
-        <text x="590" y="30" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="14" fill="#64748B" text-anchor="middle">rohit@ayaska — ~/stats</text>
+        <text x="590" y="30" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="14" fill="#64748B" text-anchor="middle">rohit@ayaska - ~/stats</text>
         
         <!-- Border line -->
         <rect x="0" y="48" width="1180" height="2" fill="url(#border-grad)" />

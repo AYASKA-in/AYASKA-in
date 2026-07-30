@@ -109,7 +109,7 @@ def create_svg(mode, output_dir):
 
     file_name = f"skills-{mode}.svg"
     output_path = os.path.join(output_dir, file_name)
-    with open(output_path, "w") as f:
+    with open(output_path, "w", encoding='utf-8') as f:
         f.write(svg_content)
     print(f"Created {output_path} (Size: {os.path.getsize(output_path)} bytes)")
 
