@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="40" viewBox="0 0 1180 40">
+    <defs>
+        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+        <filter id="glow-small" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="1.5" result="blur" />
+            <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+    </defs>
+    
+    <!-- Background (transparent) -->
+    <rect width="1180" height="40" fill="transparent" />
+
+    <!-- Dim base path -->
+    <g opacity="0.15">
+        <path d="M -10,20 L 150,20 L 170,10 L 250,10 L 270,20 L 450,20 L 470,30 L 550,30 L 570,20 L 750,20 L 770,10 L 850,10 L 870,20 L 1050,20 L 1070,30 L 1150,30 L 1170,20 L 1190,20" fill="none" stroke="#22D3EE" stroke-width="2" />
+    <path d="M 170,10 L 160,5 L 140,5" fill="none" stroke="#22D3EE" stroke-width="1.5" />
+    <path d="M 470,30 L 460,35 L 440,35" fill="none" stroke="#22D3EE" stroke-width="1.5" />
+    <path d="M 770,10 L 760,5 L 740,5" fill="none" stroke="#22D3EE" stroke-width="1.5" />
+    <path d="M 1070,30 L 1060,35 L 1040,35" fill="none" stroke="#22D3EE" stroke-width="1.5" />
+
+    </g>
+
+    <!-- Animated overlay path for drawing effect -->
+    <path d="M -10,20 L 150,20 L 170,10 L 250,10 L 270,20 L 450,20 L 470,30 L 550,30 L 570,20 L 750,20 L 770,10 L 850,10 L 870,20 L 1050,20 L 1070,30 L 1150,30 L 1170,20 L 1190,20" fill="none" stroke="#22D3EE" stroke-width="2" opacity="0.4" stroke-dasharray="1250" stroke-dashoffset="1250">
+        <animate attributeName="stroke-dashoffset" values="1250;0;1250" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
+    </path>
+
+    <!-- Branch Nodes -->
+
+    <circle cx="140" cy="5" r="2.5" fill="#A78BFA">
+        <animate attributeName="r" values="2.5;4.5;2.5" dur="3s" begin="0.0s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" begin="0.0s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
+    </circle>
+    <circle cx="440" cy="35" r="2.5" fill="#A78BFA">
+        <animate attributeName="r" values="2.5;4.5;2.5" dur="3s" begin="0.75s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" begin="0.75s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
+    </circle>
+    <circle cx="740" cy="5" r="2.5" fill="#A78BFA">
+        <animate attributeName="r" values="2.5;4.5;2.5" dur="3s" begin="1.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" begin="1.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
+    </circle>
+    <circle cx="1040" cy="35" r="2.5" fill="#A78BFA">
+        <animate attributeName="r" values="2.5;4.5;2.5" dur="3s" begin="2.25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" begin="2.25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
+    </circle>
+
+    <!-- Travelling Particle -->
+    <circle r="3" fill="#22D3EE" filter="url(#glow)">
+        <animateMotion dur="8s" repeatCount="indefinite" path="M -10,20 L 150,20 L 170,10 L 250,10 L 270,20 L 450,20 L 470,30 L 550,30 L 570,20 L 750,20 L 770,10 L 850,10 L 870,20 L 1050,20 L 1070,30 L 1150,30 L 1170,20 L 1190,20" calcMode="linear" />
+    </circle>
+    
+    <!-- Trailing Particle 1 -->
+    <circle r="2" fill="#22D3EE" opacity="0.7" filter="url(#glow-small)">
+        <animateMotion dur="8s" begin="-0.2s" repeatCount="indefinite" path="M -10,20 L 150,20 L 170,10 L 250,10 L 270,20 L 450,20 L 470,30 L 550,30 L 570,20 L 750,20 L 770,10 L 850,10 L 870,20 L 1050,20 L 1070,30 L 1150,30 L 1170,20 L 1190,20" calcMode="linear" />
+    </circle>
+    
+    <!-- Trailing Particle 2 -->
+    <circle r="1.5" fill="#22D3EE" opacity="0.4">
+        <animateMotion dur="8s" begin="-0.4s" repeatCount="indefinite" path="M -10,20 L 150,20 L 170,10 L 250,10 L 270,20 L 450,20 L 470,30 L 550,30 L 570,20 L 750,20 L 770,10 L 850,10 L 870,20 L 1050,20 L 1070,30 L 1150,30 L 1170,20 L 1190,20" calcMode="linear" />
+    </circle>
+</svg>

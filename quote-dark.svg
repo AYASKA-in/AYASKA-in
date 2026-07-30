@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="100" viewBox="0 0 1180 100">
+    <rect width="1180" height="100" fill="#0A101F" rx="8" stroke="rgba(34,211,238,0.3)" stroke-width="2"/>
+    <!-- Title bar -->
+    <rect width="1180" height="30" fill="#0B1222" rx="8"/>
+    <!-- Flat bottom for title bar -->
+    <rect width="1180" height="15" y="15" fill="#0B1222"/>
+    
+    <!-- Traffic lights -->
+    <circle cx="20" cy="15" r="6" fill="#ff5f56"/>
+    <circle cx="40" cy="15" r="6" fill="#ffbd2e"/>
+    <circle cx="60" cy="15" r="6" fill="#27c93f"/>
+    
+    <!-- Title -->
+    <text x="590.0" y="20" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="12" fill="#F8FAFC" text-anchor="middle" opacity="0.7">rohit@ayaska — ~/quotes</text>
+    
+    <!-- Border between title and body -->
+    <line x1="0" y1="30" x2="1180" y2="30" stroke="rgba(34,211,238,0.3)" stroke-width="1"/>
+    
+    <g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="16" fill="#F8FAFC">
+
+        <g opacity="0">
+            <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.01;0.22916666666666666;0.25;1" begin="0s" dur="24s" repeatCount="indefinite" />
+            
+            <clipPath id="clip-0-dark">
+                <rect x="15" y="45" height="30" width="0">
+                    <animate attributeName="width" values="0;490.4;490.4" keyTimes="0;0.125;1" begin="0s" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0 0 1 1" />
+                </rect>
+            </clipPath>
+            
+            <g clip-path="url(#clip-0-dark)">
+                <text x="20" y="70"><tspan fill="#22D3EE">&gt;</tspan> First, solve the problem. Then, write the code.</text>
+            </g>
+            
+            <!-- Cursor for this quote -->
+            <text y="70" fill="#22D3EE">█
+                <animate attributeName="x" values="20;490.4;490.4" keyTimes="0;0.125;1" begin="0s" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0 0 1 1" />
+                <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+            </text>
+        </g>
+
+        <g opacity="0">
+            <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.01;0.22916666666666666;0.25;1" begin="6s" dur="24s" repeatCount="indefinite" />
+            
+            <clipPath id="clip-1-dark">
+                <rect x="15" y="45" height="30" width="0">
+                    <animate attributeName="width" values="0;442.4;442.4" keyTimes="0;0.125;1" begin="6s" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0 0 1 1" />
+                </rect>
+            </clipPath>
+            
+            <g clip-path="url(#clip-1-dark)">
+                <text x="20" y="70"><tspan fill="#22D3EE">&gt;</tspan> Building the future, one commit at a time.</text>
+            </g>
+            
+            <!-- Cursor for this quote -->
+            <text y="70" fill="#22D3EE">█
+                <animate attributeName="x" values="20;442.4;442.4" keyTimes="0;0.125;1" begin="6s" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0 0 1 1" />
+                <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+            </text>
+        </g>
+
+        <g opacity="0">
+            <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.01;0.22916666666666666;0.25;1" begin="12s" dur="24s" repeatCount="indefinite" />
+            
+            <clipPath id="clip-2-dark">
+                <rect x="15" y="45" height="30" width="0">
+                    <animate attributeName="width" values="0;452.0;452.0" keyTimes="0;0.125;1" begin="12s" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0 0 1 1" />
+                </rect>
+            </clipPath>
+            
+            <g clip-path="url(#clip-2-dark)">
+                <text x="20" y="70"><tspan fill="#22D3EE">&gt;</tspan> AI-powered developer. Cloud-native builder.</text>
+            </g>
+            
+            <!-- Cursor for this quote -->
+            <text y="70" fill="#22D3EE">█
+                <animate attributeName="x" values="20;452.0;452.0" keyTimes="0;0.125;1" begin="12s" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0 0 1 1" />
+                <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+            </text>
+        </g>
+
+        <g opacity="0">
+            <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.01;0.22916666666666666;0.25;1" begin="18s" dur="24s" repeatCount="indefinite" />
+            
+            <clipPath id="clip-3-dark">
+                <rect x="15" y="45" height="30" width="0">
+                    <animate attributeName="width" values="0;432.8;432.8" keyTimes="0;0.125;1" begin="18s" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0 0 1 1" />
+                </rect>
+            </clipPath>
+            
+            <g clip-path="url(#clip-3-dark)">
+                <text x="20" y="70"><tspan fill="#22D3EE">&gt;</tspan> Open source contributor. IEEE researcher.</text>
+            </g>
+            
+            <!-- Cursor for this quote -->
+            <text y="70" fill="#22D3EE">█
+                <animate attributeName="x" values="20;432.8;432.8" keyTimes="0;0.125;1" begin="18s" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0 0 1 1" />
+                <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+            </text>
+        </g>
+
+    </g>
+</svg>

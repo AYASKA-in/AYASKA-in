@@ -163,6 +163,22 @@ def card(p, x, y, idx):
     else:
         a(f'<circle cx="{CARD_W-16}" cy="15" r="3.5" fill="{DIM}"/>')
 
+    # Category badge
+    cat = p.get("category", "")
+    cat_color = p.get("category_color", CYAN)
+    if cat:
+        cat_w = len(cat) * 6.5 + 16
+        a(f'<rect x="16" y="36" width="{cat_w:.0f}" height="16" rx="3" fill="{cat_color}" opacity="0.18"/>')
+        a(f'<text x="24" y="47" font-size="8.5" font-weight="700" letter-spacing="1.5" fill="{cat_color}">{esc(cat)}</text>')
+
+    # Sci-fi scanner line sweep
+    scan_delay = b + 1.5 + idx * 1.2
+    a(f'<line x1="0" y1="30" x2="{CARD_W}" y2="30" stroke="{CYAN}" stroke-width="1" opacity="0">'
+      f'<animate attributeName="y1" values="30;{CARD_H};30" dur="6s" begin="{scan_delay:.2f}s" repeatCount="indefinite"/>'
+      f'<animate attributeName="y2" values="30;{CARD_H};30" dur="6s" begin="{scan_delay:.2f}s" repeatCount="indefinite"/>'
+      f'<animate attributeName="opacity" values="0;0.25;0" dur="6s" begin="{scan_delay:.2f}s" repeatCount="indefinite"/>'
+      f'</line>')
+
     # logo (base64) or fallback monogram — with a gentle vertical float
     logo = p.get("_logo_b64")
     float_anim = (f'<animateTransform attributeName="transform" type="translate" '

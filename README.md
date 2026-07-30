@@ -7,17 +7,34 @@
   <img alt="Moningi Rohit" src="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/light.svg">
 </picture>
 
-<!-- ===== GITHUB STATS ===== -->
+<!-- ═══ circuit divider ═══ -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-light.svg">
+  <img width="100%" alt="" src="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-light.svg">
+</picture>
+
+<!-- ===== STREAK STATS ===== -->
 
 <div align="center">
 
-<!-- Streak — full width -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/output/streak-dark.svg" />
   <img width="100%" src="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/output/streak-light.svg" alt="Rohit's streak" />
 </picture>
 
-<br/>
+</div>
+
+<!-- ═══ circuit divider ═══ -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-light.svg">
+  <img width="100%" alt="" src="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-light.svg">
+</picture>
+
+<!-- ===== GITHUB STATS ===== -->
+
+<div align="center">
 
 <!-- Stats + Top languages — side by side -->
 <picture>
@@ -31,6 +48,32 @@
 
 </div>
 
+<!-- ═══ circuit divider ═══ -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-light.svg">
+  <img width="100%" alt="" src="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-light.svg">
+</picture>
+
+<!-- ===== TECH CONSTELLATION ===== -->
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/constellation-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/constellation-light.svg">
+  <img width="100%" alt="Tech Stack Constellation" src="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/constellation-light.svg">
+</picture>
+
+</div>
+
+<!-- ═══ circuit divider ═══ -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-light.svg">
+  <img width="100%" alt="" src="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-light.svg">
+</picture>
+
 <!-- ===== CONTRIBUTION SNAKE ===== -->
 
 <div align="center">
@@ -43,32 +86,48 @@
 
 </div>
 
-<!-- ===== END SNAKE ===== -->
-<br/>
-<br/>
+<!-- ═══ circuit divider ═══ -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-light.svg">
+  <img width="100%" alt="" src="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-light.svg">
+</picture>
+
+<!-- ===== PROJECTS ===== -->
+
 <div align="center">
 <img width="100%" src="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/projects/projects.svg" alt="Projects" />
 </div>
 
-<!-- ===== SOCIAL BADGES ===== -->
-<br/>
+<!-- ═══ circuit divider ═══ -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-light.svg">
+  <img width="100%" alt="" src="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/divider-light.svg">
+</picture>
+
+<!-- ===== TYPING TERMINAL QUOTE ===== -->
+
 <div align="center">
 
-<a href="https://www.linkedin.com/in/moningi-rohit/">
-  <img src="https://img.shields.io/badge/LinkedIn-0A101F?style=for-the-badge&logoColor=white&labelColor=0A101F&logo=linkedin" alt="LinkedIn" />
-</a>
-&nbsp;&nbsp;
-<a href="https://github.com/AYASKA-in">
-  <img src="https://img.shields.io/badge/GitHub-0A101F?style=for-the-badge&logo=github&logoColor=A78BFA&labelColor=0A101F" alt="GitHub" />
-</a>
-&nbsp;&nbsp;
-<a href="mailto:rohitmoningi@gmail.com">
-  <img src="https://img.shields.io/badge/Email-0A101F?style=for-the-badge&logo=gmail&logoColor=10B981&labelColor=0A101F" alt="Email" />
-</a>
-&nbsp;&nbsp;
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/quote-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/quote-light.svg">
+  <img width="100%" alt="Terminal quote" src="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/quote-light.svg">
+</picture>
 
 </div>
 
-<!-- ===== END SOCIAL BADGES ===== -->
+<!-- ===== SOCIAL LINKS ===== -->
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/social-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/social-light.svg">
+  <img width="100%" alt="Social links" src="https://raw.githubusercontent.com/AYASKA-in/AYASKA-in/main/social-light.svg">
+</picture>
+
+</div>
 
 <!-- =================================== -->

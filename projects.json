@@ -3,6 +3,8 @@
     "name": "Sri Lalitha Noodles",
     "repo": "AYASKA-in/sri-lalitha-noodles",
     "logo": null,
+    "category": "LIVE BUILD",
+    "category_color": "#10B981",
     "description": "Full-stack business web app — inventory, orders, and billing for a food manufacturer",
     "tags": ["Next.js", "TypeScript", "Supabase"]
   },
@@ -10,6 +12,8 @@
     "name": "IEEE ECG Analyser",
     "repo": "AYASKA-in/ecg-grad-cam",
     "logo": null,
+    "category": "RESEARCH",
+    "category_color": "#22D3EE",
     "description": "Deep learning cardiac arrhythmia detection with Grad-CAM explainability — IEEE published 2024",
     "tags": ["PyTorch", "Grad-CAM", "FastAPI"]
   },
@@ -17,6 +21,8 @@
     "name": "Command Center",
     "repo": "AYASKA-in/command-center",
     "logo": null,
+    "category": "SYSTEMS",
+    "category_color": "#A78BFA",
     "description": "Multi-tenant SaaS dashboard for real-time ops monitoring and system control",
     "tags": ["Next.js", "Node.js", "AWS"]
   },
@@ -24,6 +30,8 @@
     "name": "Prospient AI",
     "repo": "AYASKA-in/prospient-ai",
     "logo": null,
+    "category": "AI / ML",
+    "category_color": "#F59E0B",
     "description": "AI-powered backend services — NLP pipeline and inference API for B2B product",
     "tags": ["FastAPI", "LangChain", "PostgreSQL"]
   }

@@ -117,7 +117,11 @@ def load_and_dither(photo_path, dark=True, prepped=False):
             img = img.crop((0, top, w, min(top + new_h, h)))
     img = img.resize((GRID_COLS, GRID_ROWS), Image.LANCZOS)
     img = ImageOps.autocontrast(img, cutoff=1)
-    img = ImageEnhance.Contrast(img).enhance(1.35)
+    # Boost contrast more aggressively for prepped logos to get denser dot patterns
+    contrast_factor = 2.0 if prepped else 1.35
+    img = ImageEnhance.Contrast(img).enhance(contrast_factor)
+    if prepped:
+        img = ImageEnhance.Brightness(img).enhance(1.5)  # brighten logos for more dots
     img = img.filter(ImageFilter.UnsharpMask(radius=3, percent=150, threshold=3))
     gray = img.convert("L")
     arr = np.array(gray, dtype=np.float32)
@@ -270,12 +274,17 @@ def build_svg(dither_arrs, theme_name, n_groups=60):
           f'keyTimes="{kt}" dur="{loop_dur}" begin="{loop_begin}" repeatCount="indefinite"/>')
 
         for i, path_d in enumerate(groups):
-            # Generate random scatter offsets for this group
-            dx = random.randint(-150, 150)
-            dy = random.randint(-150, 150)
+            # Generate random scatter offsets — reduced range to stay within frame
+            dx = random.randint(-80, 80)
+            dy = random.randint(-80, 80)
+            # Stagger timing slightly per group for wave-like shatter
+            stagger = i * 0.02
             
             # Map the opacity values (1 or 0) to translation values (0,0 or dx,dy)
             t_vals = ";".join(["0 0" if v == "1" else f"{dx} {dy}" for v in frame_vals[frame_idx].split(";")])
+            # Spline easing keyTimes for organic deceleration (9 values = 8 segments)
+            scatter_splines = "0.4 0 0.2 1;" * 8
+            scatter_splines = scatter_splines.rstrip(";")
 
             if frame_idx == 0:
                 begin = 0.20 + i * 0.03
@@ -283,11 +292,13 @@ def build_svg(dither_arrs, theme_name, n_groups=60):
                   f'<animate attributeName="opacity" values="0;1" dur="0.9s" begin="{begin:.2f}s" fill="freeze" '
                   f'calcMode="spline" keyTimes="0;1" keySplines=".4 0 .2 1"/>'
                   f'<animateTransform attributeName="transform" type="translate" values="{t_vals}" '
-                  f'keyTimes="{kt}" dur="{loop_dur}" begin="{loop_begin}" repeatCount="indefinite" additive="sum"/>')
+                  f'keyTimes="{kt}" dur="{loop_dur}" begin="{loop_begin}" repeatCount="indefinite" additive="sum" '
+                  f'calcMode="spline" keySplines="{scatter_splines}"/>')
             else:
                 a(f'<g>')
                 a(f'<animateTransform attributeName="transform" type="translate" values="{t_vals}" '
-                  f'keyTimes="{kt}" dur="{loop_dur}" begin="{loop_begin}" repeatCount="indefinite" additive="sum"/>')
+                  f'keyTimes="{kt}" dur="{loop_dur}" begin="{loop_begin}" repeatCount="indefinite" additive="sum" '
+                  f'calcMode="spline" keySplines="{scatter_splines}"/>')
                 
             if path_d:
                 a(f'<path d="{path_d}"/>')
@@ -296,8 +307,26 @@ def build_svg(dither_arrs, theme_name, n_groups=60):
 
     a('</g>')
 
+    # Breathing neon pulse on frame border
     a(f'<rect x="{FRAME_X}" y="{FRAME_Y}" width="{FRAME_W}" height="{FRAME_H}" rx="10" '
-      f'fill="none" stroke="url(#accent)" stroke-width="1.5" opacity="0.7"/>')
+      f'fill="none" stroke="url(#accent)" stroke-width="1.5" opacity="0.4">'
+      f'<animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" repeatCount="indefinite" '
+      f'calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/></rect>')
+
+    # Ambient particle dust — tiny floating dots inside the portrait frame
+    for dust_i in range(25):
+        dx = random.randint(FRAME_X + 15, FRAME_X + FRAME_W - 15)
+        dy_start = random.randint(FRAME_Y + 15, FRAME_Y + FRAME_H - 15)
+        dy_end = dy_start + random.choice([-12, -8, 8, 12])
+        dur = 3 + random.random() * 4  # 3-7s
+        delay = random.random() * 5
+        opacity = 0.08 + random.random() * 0.15
+        a(f'<circle cx="{dx}" cy="{dy_start}" r="0.8" fill="{t["frame_glow"]}" opacity="{opacity:.2f}">'
+          f'<animate attributeName="cy" values="{dy_start};{dy_end};{dy_start}" dur="{dur:.1f}s" '
+          f'begin="{delay:.1f}s" repeatCount="indefinite" '
+          f'calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>'
+          f'<animate attributeName="opacity" values="{opacity:.2f};{opacity*2:.2f};{opacity:.2f}" '
+          f'dur="{dur:.1f}s" begin="{delay:.1f}s" repeatCount="indefinite"/></circle>')
 
     a(f'<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="0.30s" fill="freeze"/>'
       f'<rect x="470" y="122" width="245" height="20" rx="4" fill="{t["name_bg"]}"/>'
